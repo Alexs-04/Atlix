@@ -3,11 +3,16 @@ package com.korebit.entity;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.*;
+import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.korebit.util.SpriteSplitter;
 
 import java.util.List;
+
+import static com.korebit.util.math.Const.*;
+import static com.korebit.util.math.Move.calculeteVelocity;
 
 public class KulaActor extends Actor {
 
@@ -18,9 +23,6 @@ public class KulaActor extends Actor {
     private float stateTime = 0;
 
     private float velocity = 0, acceleration = 0;
-    private final float ACCEL = 900f;
-    private final float FRICTION = 700f;
-    private final float MAX_SPEED = 400f;
 
     private boolean facingRight = true;
     private TextureRegion currentFrame;
@@ -70,10 +72,7 @@ public class KulaActor extends Actor {
             else acceleration = 0;
         }
 
-        velocity += acceleration * delta;
-
-        if (velocity > MAX_SPEED) velocity = MAX_SPEED;
-        if (velocity < -MAX_SPEED) velocity = -MAX_SPEED;
+        velocity = calculeteVelocity(velocity, acceleration, delta);
 
         if (!left && !right &&
             Math.signum(velocity) != Math.signum(velocity - acceleration * delta)) {
