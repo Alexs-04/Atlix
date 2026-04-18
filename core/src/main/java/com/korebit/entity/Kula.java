@@ -7,7 +7,9 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.korebit.util.SpriteSplitter;
+
 import static com.korebit.util.math.Const.*;
+import static com.korebit.util.math.Move.calculeteVelocity;
 
 import java.util.List;
 
@@ -62,10 +64,7 @@ public class Kula {
                 acceleration = 0;
         }
 
-        velocity += acceleration * delta;
-
-        if (velocity > MAX_SPEED) velocity = MAX_SPEED;
-        if (velocity < -MAX_SPEED) velocity = -MAX_SPEED;
+        velocity = calculeteVelocity(velocity, acceleration, delta);
 
         if (!left && !right && Math.signum(velocity) != Math.signum(velocity - acceleration * delta)) {
             velocity = 0;

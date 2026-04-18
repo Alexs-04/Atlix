@@ -1,7 +1,7 @@
 package com.korebit.util.math;
 
 public class Move {
-    public float calculeteVelocity(float velocity, float acceleration, float delta) {
+    public static float calculeteVelocity(float velocity, float acceleration, float delta) {
         velocity += acceleration * delta;
         if (velocity > Const.MAX_SPEED) {
             velocity = Const.MAX_SPEED;
@@ -10,4 +10,6 @@ public class Move {
         }
         return velocity;
     }
+
+
 }

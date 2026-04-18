@@ -4,7 +4,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.korebit.screen.ScreenBucket;
 import com.korebit.screen.ScreenGame;
-import com.korebit.screen.ScreenScene;
+//import com.korebit.screen.ScreenScene;
 
 //import com.korebit.screen.ScreenAnimation;
 //import com.korebit.screen.ScreenGame;
