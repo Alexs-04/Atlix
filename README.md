@@ -27,7 +27,33 @@ Useful Gradle tasks and flags:
 - `idea`: generates IntelliJ project data.
 - `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
 - `lwjgl3:run`: starts the application.
+- `lwjgl3:packageDeb`: builds a Linux `.deb` installer with `jpackage`.
+- `lwjgl3:packageExe`: builds a Windows `.exe` installer with `jpackage`.
 - `test`: runs unit tests (if any).
+
+## Packaging with `jpackage`
+
+The project now includes Gradle tasks to package the game outside the IDE.
+
+### Linux `.deb`
+
+Run on Linux:
+
+```bash
+./gradlew :lwjgl3:packageDeb
+```
+
+The installer is written to `lwjgl3/build/jpackage/`.
+
+### Windows `.exe`
+
+Run on Windows with a JDK that includes `jpackage`:
+
+```powershell
+gradlew.bat :lwjgl3:packageExe
+```
+
+`jpackage` must run on the target operating system, so the `.exe` needs to be built on Windows.
 
 Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
 For example, `core:clean` removes `build` folder only from the `core` project.

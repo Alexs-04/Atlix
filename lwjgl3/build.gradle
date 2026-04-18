@@ -60,6 +60,46 @@ run {
   if (os.contains('mac')) jvmArgs += "-XstartOnFirstThread"
 }
 
+def jpackageOutputDir = layout.buildDirectory.dir("jpackage").get().asFile
+
+def buildJpackageArgs = { String type, List<String> extraArgs ->
+  [
+    '--type', type,
+    '--name', appName,
+    '--app-version', projectVersion,
+    '--input', jar.destinationDirectory.get().asFile.absolutePath,
+    '--main-jar', jar.archiveFileName.get(),
+    '--main-class', application.mainClass,
+    '--dest', jpackageOutputDir.absolutePath,
+    '--java-options', '--enable-native-access=ALL-UNNAMED'
+  ] + extraArgs
+}
+
+def registerJpackageTask = { String taskName, String type, List<String> extraArgs ->
+  tasks.register(taskName, Exec) {
+    dependsOn('jar')
+    group = 'distribution'
+    description = "Genera el instalador ${type} de Atlix con jpackage."
+    doFirst {
+      jpackageOutputDir.mkdirs()
+      commandLine = ['jpackage'] + buildJpackageArgs(type, extraArgs) as List<String>
+    }
+  }
+}
+
+registerJpackageTask('packageDeb', 'deb', [
+  '--linux-shortcut',
+  '--linux-menu-group', appName,
+  '--linux-app-category', 'Game',
+  '--icon', project.file('icons/logo.png').absolutePath
+])
+
+registerJpackageTask('packageExe', 'exe', [
+  '--win-shortcut',
+  '--win-menu',
+  '--icon', project.file('icons/logo.ico').absolutePath
+])
+
 jar {
 // sets the name of the .jar file this produces to the name of the game or app, with the version after.
   archiveFileName.set("${appName}-${projectVersion}.jar")
