@@ -1,4 +1,4 @@
-package com.korebit.screen;
+package com.korebit.simple.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
@@ -11,6 +11,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.korebit.Main;
+import com.korebit.screen.ScreenGame;
 
 public class ScreenBucket extends ScreenGame {
 
@@ -23,7 +24,8 @@ public class ScreenBucket extends ScreenGame {
     private Sprite bucketSprite;
     private Array<Sprite> raindrops;
     private float dropTimer;
-    public ScreenBucket(Main game) {
+    
+    protected  ScreenBucket(Main game) {
         super(game);
     }
 
@@ -81,8 +83,8 @@ public class ScreenBucket extends ScreenGame {
     }
 
     private void input(float delta) {
-        boolean left = Gdx.input.isKeyPressed(com.badlogic.gdx.Input.Keys.LEFT);
-        boolean right = Gdx.input.isKeyPressed(com.badlogic.gdx.Input.Keys.RIGHT);
+        boolean left = Gdx.input.isKeyPressed(com.badlogic.gdx.Input.Keys.LEFT) || Gdx.input.isKeyPressed(com.badlogic.gdx.Input.Keys.A);
+        boolean right = Gdx.input.isKeyPressed(com.badlogic.gdx.Input.Keys.RIGHT) || Gdx.input.isKeyPressed(com.badlogic.gdx.Input.Keys.D);
 
         float speed = 400f;
 

@@ -63,7 +63,7 @@ public class Kula {
             } else
                 acceleration = 0;
         }
-
+        
         velocity = calculeteVelocity(velocity, acceleration, delta);
 
         if (!left && !right && Math.signum(velocity) != Math.signum(velocity - acceleration * delta)) {
