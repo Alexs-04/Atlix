@@ -10,6 +10,4 @@ public class Move {
         }
         return velocity;
     }
-
-
 }
