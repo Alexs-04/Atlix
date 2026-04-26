@@ -53,5 +53,6 @@ public class ScreenScene extends ScreenGame {
     @Override
     public void dispose() {
         stage.dispose();
+        kulaActor.dispose();
     }
 }
