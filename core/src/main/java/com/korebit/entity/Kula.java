@@ -18,7 +18,7 @@ public class Kula {
     private final Sprite sprite;
     private final Animation<TextureRegion> idleAnimation;
     private final Animation<TextureRegion> moveAnimation;
-    private float velocity = 0, acceleration = 0;
+    private float velocity = 0;
     private boolean facingRight = true;  // Dirección actual del sprite
 
     public Kula() {
@@ -43,6 +43,7 @@ public class Kula {
         boolean left = Gdx.input.isKeyPressed(Input.Keys.A);
         boolean right = Gdx.input.isKeyPressed(Input.Keys.D);
 
+        float acceleration;
         if (left && !right) {
             acceleration = -ACCEL;
             if (facingRight) {
@@ -63,7 +64,7 @@ public class Kula {
             } else
                 acceleration = 0;
         }
-        
+
         velocity = calculeteVelocity(velocity, acceleration, delta);
 
         if (!left && !right && Math.signum(velocity) != Math.signum(velocity - acceleration * delta)) {

@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.korebit.screen.ScreenGame;
+//import com.korebit.screen.ScreenScene;
+import com.korebit.screen.ScreenScene;
 import com.korebit.simple.game.ScreenMainMenu;
 
 /**
@@ -28,7 +30,7 @@ public class Main extends Game {
 
         font.setUseIntegerPositions(false);
         font.getData().setScale(viewport.getWorldHeight() / Gdx.graphics.getHeight());
-        setScreen(currentScreen = new ScreenMainMenu(this));
+        setScreen(currentScreen = new ScreenScene(this)); //new ScreenMainMenu(this));
     }
 
     @Override
@@ -39,7 +41,7 @@ public class Main extends Game {
     }
 
     @Override
-    public void render(){
+    public void render() {
         super.render();
     }
 }

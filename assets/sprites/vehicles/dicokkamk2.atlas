@@ -1,0 +1,62 @@
+
+dicokkamk2.png
+size: 256, 256
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+dicokkamk2/Di_Cokka_MKII_idle
+  rotate: false
+  xy: 155, 68
+  size: 72, 64
+  orig: 72, 64
+  offset: 0, 0
+  index: 0
+dicokkamk2/Di_Cokka_MKII_idle
+  rotate: false
+  xy: 78, 6
+  size: 75, 59
+  orig: 75, 59
+  offset: 0, 0
+  index: 1
+dicokkamk2/Di_Cokka_MKII_walk
+  rotate: false
+  xy: 1, 134
+  size: 76, 65
+  orig: 76, 65
+  offset: 0, 0
+  index: 3
+dicokkamk2/Di_Cokka_MKII_walk
+  rotate: false
+  xy: 1, 68
+  size: 76, 64
+  orig: 76, 64
+  offset: 0, 0
+  index: 0
+dicokkamk2/Di_Cokka_MKII_walk
+  rotate: false
+  xy: 79, 134
+  size: 75, 65
+  orig: 75, 65
+  offset: 0, 0
+  index: 1
+dicokkamk2/Di_Cokka_MKII_walk
+  rotate: false
+  xy: 1, 1
+  size: 75, 65
+  orig: 75, 65
+  offset: 0, 0
+  index: 2
+dicokkamk2/Di_Cokka_MKII_walk
+  rotate: false
+  xy: 156, 134
+  size: 75, 65
+  orig: 75, 65
+  offset: 0, 0
+  index: 5
+dicokkamk2/Di_Cokka_MKII_walk
+  rotate: false
+  xy: 79, 67
+  size: 74, 65
+  orig: 74, 65
+  offset: 0, 0
+  index: 4

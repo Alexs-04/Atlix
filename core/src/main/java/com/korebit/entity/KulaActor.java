@@ -22,7 +22,7 @@ public class KulaActor extends Actor {
 
     private float stateTime = 0;
 
-    private float velocity = 0, acceleration = 0;
+    private float velocity = 0;
 
     private boolean facingRight = true;
     private TextureRegion currentFrame;
@@ -60,6 +60,7 @@ public class KulaActor extends Actor {
         boolean right = Gdx.input.isKeyPressed(Input.Keys.D);
 
         // Movimiento
+        float acceleration;
         if (left && !right) {
             acceleration = -ACCEL;
             facingRight = false;
