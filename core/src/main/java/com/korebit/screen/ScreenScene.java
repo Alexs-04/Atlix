@@ -3,19 +3,25 @@ package com.korebit.screen;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.korebit.Main;
-import com.korebit.entity.KulaActor;
+//import com.korebit.entity.KulaActor;
+import com.korebit.entity.Soldier;
+import com.korebit.entity.WarTank;
 
 public class ScreenScene extends ScreenGame {
 
     private final Stage stage;
-    private KulaActor kulaActor;
+//    private KulaActor kulaActor;
+    private final Soldier soldier;
+    private final WarTank warTank;
 
     public ScreenScene(Main game) {
         super(game);
         this.stage = new Stage();
-        this.kulaActor = new KulaActor();
-
-        stage.addActor(kulaActor);
+        // this.kulaActor = new KulaActor();
+        this.soldier = new Soldier();
+        this.warTank = new WarTank();
+        stage.addActor(soldier);
+        stage.addActor(warTank);
     }
 
     @Override
@@ -27,6 +33,12 @@ public class ScreenScene extends ScreenGame {
     public void render(float delta) {
         ScreenUtils.clear(0f, 0f, 0f, 1f);
         stage.act(delta);
+
+        if (soldier.getBounds().overlaps(warTank.getBounds())) {
+            soldier.onCollision(warTank);
+            warTank.onCollision(soldier);
+        }
+
         stage.draw();
     }
 
@@ -53,6 +65,8 @@ public class ScreenScene extends ScreenGame {
     @Override
     public void dispose() {
         stage.dispose();
-        kulaActor.dispose();
+//        kulaActor.dispose();
+        soldier.dispose();
+        warTank.dispose();
     }
 }

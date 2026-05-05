@@ -1,0 +1,181 @@
+
+soldier.png
+size: 256, 256
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+soldier/soldier_dead
+  rotate: false
+  xy: 1, 205
+  size: 50, 49
+  orig: 50, 49
+  offset: 0, 0
+  index: 8
+soldier/soldier_dead
+  rotate: false
+  xy: 1, 154
+  size: 50, 49
+  orig: 50, 49
+  offset: 0, 0
+  index: 9
+soldier/soldier_dead
+  rotate: false
+  xy: 53, 205
+  size: 50, 49
+  orig: 50, 49
+  offset: 0, 0
+  index: 10
+soldier/soldier_dead
+  rotate: false
+  xy: 1, 103
+  size: 49, 49
+  orig: 49, 49
+  offset: 0, 0
+  index: 5
+soldier/soldier_dead
+  rotate: false
+  xy: 53, 154
+  size: 49, 49
+  orig: 49, 49
+  offset: 0, 0
+  index: 7
+soldier/soldier_dead
+  rotate: false
+  xy: 105, 205
+  size: 48, 49
+  orig: 48, 49
+  offset: 0, 0
+  index: 6
+soldier/soldier_dead
+  rotate: false
+  xy: 1, 52
+  size: 48, 49
+  orig: 48, 49
+  offset: 0, 0
+  index: 11
+soldier/soldier_dead
+  rotate: false
+  xy: 52, 103
+  size: 47, 49
+  orig: 47, 49
+  offset: 0, 0
+  index: 4
+soldier/soldier_dead
+  rotate: false
+  xy: 104, 154
+  size: 45, 49
+  orig: 45, 49
+  offset: 0, 0
+  index: 3
+soldier/soldier_dead
+  rotate: false
+  xy: 155, 205
+  size: 42, 49
+  orig: 42, 49
+  offset: 0, 0
+  index: 1
+soldier/soldier_dead
+  rotate: false
+  xy: 155, 205
+  size: 42, 49
+  orig: 42, 49
+  offset: 0, 0
+  index: 2
+soldier/soldier_dead
+  rotate: false
+  xy: 1, 1
+  size: 34, 49
+  orig: 34, 49
+  offset: 0, 0
+  index: 0
+soldier/soldier_idle
+  rotate: false
+  xy: 37, 10
+  size: 42, 40
+  orig: 42, 40
+  offset: 0, 0
+  index: 0
+soldier/soldier_idle
+  rotate: false
+  xy: 199, 173
+  size: 42, 40
+  orig: 42, 40
+  offset: 0, 0
+  index: 1
+soldier/soldier_idle
+  rotate: false
+  xy: 199, 131
+  size: 41, 40
+  orig: 41, 40
+  offset: 0, 0
+  index: 2
+soldier/soldier_jump
+  rotate: false
+  xy: 51, 62
+  size: 44, 39
+  orig: 44, 39
+  offset: 0, 0
+  index: 0
+soldier/soldier_jump
+  rotate: false
+  xy: 199, 215
+  size: 44, 39
+  orig: 44, 39
+  offset: 0, 0
+  index: 1
+soldier/soldier_jump
+  rotate: false
+  xy: 155, 164
+  size: 42, 39
+  orig: 42, 39
+  offset: 0, 0
+  index: 2
+soldier/soldier_jump
+  rotate: false
+  xy: 81, 21
+  size: 40, 39
+  orig: 40, 39
+  offset: 0, 0
+  index: 3
+soldier/soldier_walk
+  rotate: false
+  xy: 155, 123
+  size: 40, 39
+  orig: 40, 39
+  offset: 0, 0
+  index: 5
+soldier/soldier_walk
+  rotate: false
+  xy: 197, 90
+  size: 39, 39
+  orig: 39, 39
+  offset: 0, 0
+  index: 1
+soldier/soldier_walk
+  rotate: false
+  xy: 104, 113
+  size: 39, 39
+  orig: 39, 39
+  offset: 0, 0
+  index: 2
+soldier/soldier_walk
+  rotate: false
+  xy: 104, 72
+  size: 37, 39
+  orig: 37, 39
+  offset: 0, 0
+  index: 3
+soldier/soldier_walk
+  rotate: false
+  xy: 123, 31
+  size: 36, 39
+  orig: 36, 39
+  offset: 0, 0
+  index: 0
+soldier/soldier_walk
+  rotate: false
+  xy: 143, 72
+  size: 36, 39
+  orig: 36, 39
+  offset: 0, 0
+  index: 4
