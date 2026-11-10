@@ -1,20 +1,15 @@
 package com.korebit.entity;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Array;
 import com.korebit.util.EntityState;
 
-import static com.korebit.util.math.Const.*;
-import static com.korebit.util.math.Move.calculeteVelocity;
 
-public class Soldier extends Actor {
+public class Soldier extends Player {
 
     private final TextureAtlas texture;
     private final Animation<TextureRegion> idle;
@@ -25,14 +20,10 @@ public class Soldier extends Actor {
 
     private final Rectangle bounds;
 
-    private float stateTime = 0;
-    private float velocity = 0;
-
     // Control de muerte
     private float deathTimer = 0;
     private boolean deathAnimationFinished = false;
 
-    private boolean facingRight = true;
     private TextureRegion currentFrame;
 
     public Soldier() {
@@ -68,7 +59,7 @@ public class Soldier extends Actor {
     public void act(float delta) {
         super.act(delta);
 
-        stateTime += delta;
+        setStateTime(getStateTime() + delta);
 
         if (entityState == EntityState.DEAD) {
             handleDeath(delta);
@@ -83,34 +74,10 @@ public class Soldier extends Actor {
     // -----------------------------
     // MOVIMIENTO
     // -----------------------------
-    private void handleMovement(float delta) {
-        boolean left = Gdx.input.isKeyPressed(Input.Keys.A);
-        boolean right = Gdx.input.isKeyPressed(Input.Keys.D);
-
-        float acceleration;
-
-        if (left && !right) {
-            acceleration = -ACCEL;
-            facingRight = false;
-        } else if (right && !left) {
-            acceleration = ACCEL;
-            facingRight = true;
-        } else {
-            if (velocity > 0) acceleration = -FRICTION;
-            else if (velocity < 0) acceleration = FRICTION;
-            else acceleration = 0;
-        }
-
-        velocity = calculeteVelocity(velocity, acceleration, delta);
-
-        if (!left && !right &&
-            Math.signum(velocity) != Math.signum(velocity - acceleration * delta)) {
-            velocity = 0;
-        }
-
-        moveBy(velocity * delta, 0);
-
-        entityState = (velocity != 0) ? EntityState.WALK : EntityState.IDLE;
+    @Override
+    public void handleMovement(float delta) {
+        super.handleMovement(delta);
+        entityState = (getVelocity() != 0) ? EntityState.WALK : EntityState.IDLE;
     }
 
     // -----------------------------
@@ -118,7 +85,7 @@ public class Soldier extends Actor {
     // -----------------------------
     private void handleDeath(float delta) {
 
-        if (!deathAnimationFinished && dead.isAnimationFinished(stateTime)) {
+        if (!deathAnimationFinished && dead.isAnimationFinished(getStateTime())) {
             deathAnimationFinished = true;
             deathTimer = 0;
         }
@@ -137,9 +104,9 @@ public class Soldier extends Actor {
     // -----------------------------
     private void updateAnimation() {
         switch (entityState) {
-            case IDLE, INVULNERABLE -> currentFrame = idle.getKeyFrame(stateTime, true);
-            case WALK -> currentFrame = walk.getKeyFrame(stateTime, true);
-            case DEAD -> currentFrame = dead.getKeyFrame(stateTime, false);
+            case IDLE, INVULNERABLE -> currentFrame = idle.getKeyFrame(getStateTime(), true);
+            case WALK -> currentFrame = walk.getKeyFrame(getStateTime(), true);
+            case DEAD -> currentFrame = dead.getKeyFrame(getStateTime(), false);
         }
     }
 
@@ -149,10 +116,10 @@ public class Soldier extends Actor {
     public void onCollision(WarTank tank) {
         if (entityState != EntityState.DEAD) {
             entityState = EntityState.DEAD;
-            stateTime = 0;                 // 👈 clave
+            setStateTime(0);                // 👈 clave
             deathAnimationFinished = false;
             deathTimer = 0;
-            velocity = 0;
+            setVelocity(0);
         }
     }
 
@@ -161,8 +128,8 @@ public class Soldier extends Actor {
     // -----------------------------
     private void reset() {
         entityState = EntityState.IDLE;
-        stateTime = 0;
-        velocity = 0;
+        setStateTime(0);
+        setVelocity(0);
         deathAnimationFinished = false;
         deathTimer = 0;
 
@@ -179,7 +146,7 @@ public class Soldier extends Actor {
         float width = getWidth();
         float height = getHeight();
 
-        if (facingRight) {
+        if (isFacingRight()) {
             batch.draw(currentFrame, getX(), getY(), width, height);
         } else {
             batch.draw(currentFrame,
