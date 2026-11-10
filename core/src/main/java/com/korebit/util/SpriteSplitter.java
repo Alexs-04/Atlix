@@ -87,7 +87,6 @@ public class SpriteSplitter {
         return frames;
     }
 
-    // Método con valores por defecto: maxChannelDiff=12, noiseTolerance=0.05f
     public static List<TextureRegion> splitByGrayLines(Texture texture) {
         return splitByGrayLines(texture, 12, 0.05f);
     }

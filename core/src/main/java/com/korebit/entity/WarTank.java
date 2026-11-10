@@ -63,6 +63,11 @@ public class WarTank extends Actor {
         velocity += acceleration * delta;
         moveBy(velocity * delta, 0);
         bounds.set(getX(), getY(), getWidth(), getHeight());
+
+        if (getX() < 0) {
+            velocity = 0;
+            moveBy(600, 0);
+        }
     }
 
     @Override
