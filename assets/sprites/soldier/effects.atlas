@@ -1,0 +1,118 @@
+
+effects.png
+size: 512, 64
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+grenade_effect
+  rotate: false
+  xy: 2, 2
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: 1
+grenade_effect
+  rotate: false
+  xy: 38, 2
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: 2
+grenade_effect
+  rotate: false
+  xy: 151, 2
+  size: 33, 34
+  orig: 33, 34
+  offset: 0, 0
+  index: 3
+grenade_effect
+  rotate: false
+  xy: 186, 2
+  size: 33, 34
+  orig: 33, 34
+  offset: 0, 0
+  index: 4
+grenade_effect
+  rotate: false
+  xy: 221, 2
+  size: 32, 34
+  orig: 32, 34
+  offset: 0, 0
+  index: 5
+grenade_effect
+  rotate: false
+  xy: 255, 2
+  size: 32, 34
+  orig: 32, 34
+  offset: 0, 0
+  index: 6
+grenade_effect
+  rotate: false
+  xy: 289, 2
+  size: 32, 34
+  orig: 32, 34
+  offset: 0, 0
+  index: 7
+grenade_effect
+  rotate: false
+  xy: 323, 2
+  size: 32, 34
+  orig: 32, 34
+  offset: 0, 0
+  index: 8
+shot-1
+  rotate: false
+  xy: 357, 6
+  size: 25, 30
+  orig: 25, 30
+  offset: 0, 0
+  index: -1
+shot-2
+  rotate: false
+  xy: 114, 6
+  size: 35, 30
+  orig: 35, 30
+  offset: 0, 0
+  index: -1
+shot-3
+  rotate: false
+  xy: 74, 6
+  size: 38, 30
+  orig: 38, 30
+  offset: 0, 0
+  index: -1
+shot-4
+  rotate: false
+  xy: 408, 6
+  size: 21, 30
+  orig: 21, 30
+  offset: 0, 0
+  index: -1
+shot-5
+  rotate: false
+  xy: 454, 6
+  size: 20, 30
+  orig: 20, 30
+  offset: 0, 0
+  index: -1
+shot-6
+  rotate: false
+  xy: 431, 6
+  size: 21, 30
+  orig: 21, 30
+  offset: 0, 0
+  index: -1
+shot-7
+  rotate: false
+  xy: 384, 6
+  size: 22, 30
+  orig: 22, 30
+  offset: 0, 0
+  index: -1
+shot-8
+  rotate: false
+  xy: 476, 6
+  size: 20, 30
+  orig: 20, 30
+  offset: 0, 0
+  index: -1

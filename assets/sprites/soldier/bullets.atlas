@@ -1,0 +1,118 @@
+
+bullets.png
+size: 64, 128
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+grenade
+  rotate: false
+  xy: 2, 107
+  size: 21, 19
+  orig: 21, 19
+  offset: 0, 0
+  index: 4
+grenade
+  rotate: false
+  xy: 2, 86
+  size: 21, 19
+  orig: 21, 19
+  offset: 0, 0
+  index: 6
+grenade
+  rotate: false
+  xy: 25, 107
+  size: 21, 19
+  orig: 21, 19
+  offset: 0, 0
+  index: 12
+grenade
+  rotate: false
+  xy: 48, 107
+  size: 14, 19
+  orig: 14, 19
+  offset: 0, 0
+  index: 3
+grenade
+  rotate: false
+  xy: 2, 65
+  size: 21, 19
+  orig: 21, 19
+  offset: 0, 0
+  index: 14
+grenade
+  rotate: false
+  xy: 25, 86
+  size: 18, 19
+  orig: 18, 19
+  offset: 0, 0
+  index: 5
+grenade
+  rotate: false
+  xy: 2, 44
+  size: 18, 19
+  orig: 18, 19
+  offset: 0, 0
+  index: 13
+grenade
+  rotate: false
+  xy: 25, 65
+  size: 14, 19
+  orig: 14, 19
+  offset: 0, 0
+  index: 7
+grenade
+  rotate: false
+  xy: 45, 86
+  size: 14, 19
+  orig: 14, 19
+  offset: 0, 0
+  index: 11
+grenade
+  rotate: false
+  xy: 2, 23
+  size: 14, 19
+  orig: 14, 19
+  offset: 0, 0
+  index: 15
+grenade
+  rotate: false
+  xy: 2, 2
+  size: 13, 19
+  orig: 13, 19
+  offset: 0, 0
+  index: 2
+grenade
+  rotate: false
+  xy: 17, 2
+  size: 13, 19
+  orig: 13, 19
+  offset: 0, 0
+  index: 8
+grenade
+  rotate: false
+  xy: 18, 23
+  size: 12, 19
+  orig: 12, 19
+  offset: 0, 0
+  index: 1
+grenade
+  rotate: false
+  xy: 22, 44
+  size: 13, 19
+  orig: 13, 19
+  offset: 0, 0
+  index: 10
+grenade
+  rotate: false
+  xy: 41, 65
+  size: 13, 19
+  orig: 13, 19
+  offset: 0, 0
+  index: 16
+grenade
+  rotate: false
+  xy: 37, 44
+  size: 12, 19
+  orig: 12, 19
+  offset: 0, 0
+  index: 9

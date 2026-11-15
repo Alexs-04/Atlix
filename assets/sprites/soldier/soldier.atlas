@@ -1,181 +1,489 @@
 
 soldier.png
-size: 256, 256
+size: 1024, 256
 format: RGBA8888
 filter: Nearest, Nearest
 repeat: none
-soldier/soldier_dead
+soldier_dead
   rotate: false
-  xy: 1, 205
+  xy: 2, 205
   size: 50, 49
   orig: 50, 49
   offset: 0, 0
   index: 8
-soldier/soldier_dead
+soldier_dead
   rotate: false
-  xy: 1, 154
+  xy: 2, 154
   size: 50, 49
   orig: 50, 49
   offset: 0, 0
   index: 9
-soldier/soldier_dead
+soldier_dead
   rotate: false
-  xy: 53, 205
+  xy: 54, 205
   size: 50, 49
   orig: 50, 49
   offset: 0, 0
   index: 10
-soldier/soldier_dead
+soldier_dead
   rotate: false
-  xy: 1, 103
+  xy: 54, 154
   size: 49, 49
   orig: 49, 49
   offset: 0, 0
   index: 5
-soldier/soldier_dead
+soldier_dead
   rotate: false
-  xy: 53, 154
+  xy: 106, 205
   size: 49, 49
   orig: 49, 49
   offset: 0, 0
   index: 7
-soldier/soldier_dead
+soldier_dead
   rotate: false
-  xy: 105, 205
+  xy: 105, 154
   size: 48, 49
   orig: 48, 49
   offset: 0, 0
   index: 6
-soldier/soldier_dead
+soldier_dead
   rotate: false
-  xy: 1, 52
+  xy: 157, 205
   size: 48, 49
   orig: 48, 49
   offset: 0, 0
   index: 11
-soldier/soldier_dead
+soldier_dead
   rotate: false
-  xy: 52, 103
+  xy: 53, 52
   size: 47, 49
   orig: 47, 49
   offset: 0, 0
   index: 4
-soldier/soldier_dead
+soldier_dead
   rotate: false
-  xy: 104, 154
+  xy: 105, 103
   size: 45, 49
   orig: 45, 49
   offset: 0, 0
   index: 3
-soldier/soldier_dead
+soldier_dead
   rotate: false
-  xy: 155, 205
+  xy: 390, 205
   size: 42, 49
   orig: 42, 49
   offset: 0, 0
   index: 1
-soldier/soldier_dead
+soldier_dead
   rotate: false
-  xy: 155, 205
+  xy: 390, 205
   size: 42, 49
   orig: 42, 49
   offset: 0, 0
   index: 2
-soldier/soldier_dead
+soldier_dead
   rotate: false
-  xy: 1, 1
+  xy: 152, 103
   size: 34, 49
   orig: 34, 49
   offset: 0, 0
   index: 0
-soldier/soldier_idle
+soldier_grenade
   rotate: false
-  xy: 37, 10
+  xy: 2, 6
+  size: 45, 44
+  orig: 45, 44
+  offset: 0, 0
+  index: 8
+soldier_grenade
+  rotate: false
+  xy: 610, 210
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: 7
+soldier_grenade
+  rotate: false
+  xy: 656, 168
+  size: 42, 44
+  orig: 42, 44
+  offset: 0, 0
+  index: 6
+soldier_grenade
+  rotate: false
+  xy: 700, 168
+  size: 28, 44
+  orig: 28, 44
+  offset: 0, 0
+  index: 1
+soldier_grenade
+  rotate: false
+  xy: 914, 130
+  size: 38, 44
+  orig: 38, 44
+  offset: 0, 0
+  index: 9
+soldier_grenade
+  rotate: false
+  xy: 954, 131
+  size: 37, 44
+  orig: 37, 44
+  offset: 0, 0
+  index: 5
+soldier_grenade
+  rotate: false
+  xy: 993, 131
+  size: 29, 44
+  orig: 29, 44
+  offset: 0, 0
+  index: 2
+soldier_grenade
+  rotate: false
+  xy: 99, 6
+  size: 30, 44
+  orig: 30, 44
+  offset: 0, 0
+  index: 3
+soldier_grenade
+  rotate: false
+  xy: 951, 84
+  size: 33, 44
+  orig: 33, 44
+  offset: 0, 0
+  index: 4
+soldier_grenade
+  rotate: false
+  xy: 131, 2
+  size: 37, 44
+  orig: 37, 44
+  offset: 0, 0
+  index: 11
+soldier_grenade
+  rotate: false
+  xy: 170, 2
+  size: 35, 44
+  orig: 35, 44
+  offset: 0, 0
+  index: 10
+soldier_grenade
+  rotate: false
+  xy: 207, 2
+  size: 31, 44
+  orig: 31, 44
+  offset: 0, 0
+  index: 12
+soldier_grenade
+  rotate: false
+  xy: 240, 2
+  size: 31, 44
+  orig: 31, 44
+  offset: 0, 0
+  index: 14
+soldier_grenade
+  rotate: false
+  xy: 273, 2
+  size: 30, 44
+  orig: 30, 44
+  offset: 0, 0
+  index: 13
+soldier_idle
+  rotate: false
+  xy: 823, 176
   size: 42, 40
   orig: 42, 40
   offset: 0, 0
   index: 0
-soldier/soldier_idle
+soldier_idle
   rotate: false
-  xy: 199, 173
+  xy: 867, 176
   size: 42, 40
   orig: 42, 40
   offset: 0, 0
   index: 1
-soldier/soldier_idle
+soldier_idle
   rotate: false
-  xy: 199, 131
+  xy: 911, 176
   size: 41, 40
   orig: 41, 40
   offset: 0, 0
   index: 2
-soldier/soldier_jump
+soldier_jump
   rotate: false
-  xy: 51, 62
+  xy: 610, 169
   size: 44, 39
   orig: 44, 39
   offset: 0, 0
   index: 0
-soldier/soldier_jump
+soldier_jump
   rotate: false
-  xy: 199, 215
+  xy: 777, 177
   size: 44, 39
   orig: 44, 39
   offset: 0, 0
   index: 1
-soldier/soldier_jump
+soldier_jump
   rotate: false
-  xy: 155, 164
+  xy: 954, 177
   size: 42, 39
   orig: 42, 39
   offset: 0, 0
   index: 2
-soldier/soldier_jump
+soldier_jump
   rotate: false
-  xy: 81, 21
+  xy: 909, 89
   size: 40, 39
   orig: 40, 39
   offset: 0, 0
   index: 3
-soldier/soldier_walk
+soldier_melee
   rotate: false
-  xy: 155, 123
-  size: 40, 39
-  orig: 40, 39
+  xy: 49, 10
+  size: 48, 40
+  orig: 48, 40
+  offset: 0, 0
+  index: 4
+soldier_melee
+  rotate: false
+  xy: 656, 214
+  size: 48, 40
+  orig: 48, 40
   offset: 0, 0
   index: 5
-soldier/soldier_walk
+soldier_melee
   rotate: false
-  xy: 197, 90
-  size: 39, 39
-  orig: 39, 39
-  offset: 0, 0
-  index: 1
-soldier/soldier_walk
-  rotate: false
-  xy: 104, 113
-  size: 39, 39
-  orig: 39, 39
-  offset: 0, 0
-  index: 2
-soldier/soldier_walk
-  rotate: false
-  xy: 104, 72
-  size: 37, 39
-  orig: 37, 39
+  xy: 730, 176
+  size: 45, 40
+  orig: 45, 40
   offset: 0, 0
   index: 3
-soldier/soldier_walk
+soldier_melee
   rotate: false
-  xy: 123, 31
+  xy: 866, 96
+  size: 41, 40
+  orig: 41, 40
+  offset: 0, 0
+  index: 1
+soldier_melee
+  rotate: false
+  xy: 157, 163
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: 2
+soldier_shot
+  rotate: false
+  xy: 2, 103
+  size: 50, 49
+  orig: 50, 49
+  offset: 0, 0
+  index: 1
+soldier_shot
+  rotate: false
+  xy: 2, 52
+  size: 49, 49
+  orig: 49, 49
+  offset: 0, 0
+  index: 2
+soldier_shot
+  rotate: false
+  xy: 54, 103
+  size: 49, 49
+  orig: 49, 49
+  offset: 0, 0
+  index: 7
+soldier_shot
+  rotate: false
+  xy: 207, 205
+  size: 45, 49
+  orig: 45, 49
+  offset: 0, 0
+  index: 6
+soldier_shot
+  rotate: false
+  xy: 254, 205
+  size: 44, 49
+  orig: 44, 49
+  offset: 0, 0
+  index: 3
+soldier_shot
+  rotate: false
+  xy: 300, 205
+  size: 43, 49
+  orig: 43, 49
+  offset: 0, 0
+  index: 4
+soldier_shot
+  rotate: false
+  xy: 345, 205
+  size: 43, 49
+  orig: 43, 49
+  offset: 0, 0
+  index: 5
+soldier_shot
+  rotate: false
+  xy: 434, 204
+  size: 42, 50
+  orig: 42, 50
+  offset: 0, 0
+  index: 8
+soldier_shot
+  rotate: false
+  xy: 478, 204
+  size: 42, 50
+  orig: 42, 50
+  offset: 0, 0
+  index: 9
+soldier_shot
+  rotate: false
+  xy: 522, 204
+  size: 42, 50
+  orig: 42, 50
+  offset: 0, 0
+  index: 10
+soldier_shot
+  rotate: false
+  xy: 566, 204
+  size: 42, 50
+  orig: 42, 50
+  offset: 0, 0
+  index: 11
+soldier_sit
+  rotate: false
+  xy: 706, 218
+  size: 50, 36
+  orig: 50, 36
+  offset: 0, 0
+  index: 3
+soldier_sit
+  rotate: false
+  xy: 758, 218
+  size: 49, 36
+  orig: 49, 36
+  offset: 0, 0
+  index: 1
+soldier_sit
+  rotate: false
+  xy: 809, 218
+  size: 49, 36
+  orig: 49, 36
+  offset: 0, 0
+  index: 2
+soldier_sit
+  rotate: false
+  xy: 730, 138
+  size: 45, 36
+  orig: 45, 36
+  offset: 0, 0
+  index: 4
+soldier_sit_shot
+  rotate: false
+  xy: 860, 218
+  size: 49, 36
+  orig: 49, 36
+  offset: 0, 0
+  index: 1
+soldier_sit_shot
+  rotate: false
+  xy: 911, 218
+  size: 49, 36
+  orig: 49, 36
+  offset: 0, 0
+  index: 7
+soldier_sit_shot
+  rotate: false
+  xy: 962, 218
+  size: 48, 36
+  orig: 48, 36
+  offset: 0, 0
+  index: 2
+soldier_sit_shot
+  rotate: false
+  xy: 777, 139
+  size: 43, 36
+  orig: 43, 36
+  offset: 0, 0
+  index: 3
+soldier_sit_shot
+  rotate: false
+  xy: 822, 138
+  size: 45, 36
+  orig: 45, 36
+  offset: 0, 0
+  index: 6
+soldier_sit_shot
+  rotate: false
+  xy: 869, 138
+  size: 43, 36
+  orig: 43, 36
+  offset: 0, 0
+  index: 4
+soldier_sit_shot
+  rotate: false
+  xy: 777, 101
+  size: 43, 36
+  orig: 43, 36
+  offset: 0, 0
+  index: 5
+soldier_sit_shot
+  rotate: false
+  xy: 822, 100
+  size: 42, 36
+  orig: 42, 36
+  offset: 0, 0
+  index: 8
+soldier_sit_shot
+  rotate: false
+  xy: 320, 167
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: 9
+soldier_sit_shot
+  rotate: false
+  xy: 358, 167
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: 10
+soldier_walk
+  rotate: false
+  xy: 986, 89
   size: 36, 39
   orig: 36, 39
   offset: 0, 0
   index: 0
-soldier/soldier_walk
+soldier_walk
   rotate: false
-  xy: 143, 72
+  xy: 986, 48
   size: 36, 39
   orig: 36, 39
   offset: 0, 0
   index: 4
+soldier_walk
+  rotate: false
+  xy: 131, 48
+  size: 40, 39
+  orig: 40, 39
+  offset: 0, 0
+  index: 5
+soldier_walk
+  rotate: false
+  xy: 199, 164
+  size: 39, 39
+  orig: 39, 39
+  offset: 0, 0
+  index: 1
+soldier_walk
+  rotate: false
+  xy: 240, 164
+  size: 39, 39
+  orig: 39, 39
+  offset: 0, 0
+  index: 2
+soldier_walk
+  rotate: false
+  xy: 281, 164
+  size: 37, 39
+  orig: 37, 39
+  offset: 0, 0
+  index: 3
