@@ -8,7 +8,6 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
 import com.korebit.util.EntityState;
 
-
 public class Soldier extends Player {
 
     private final TextureAtlas texture;
@@ -20,7 +19,6 @@ public class Soldier extends Player {
 
     private final Rectangle bounds;
 
-    // Control de muerte
     private float deathTimer = 0;
     private boolean deathAnimationFinished = false;
 
@@ -33,17 +31,17 @@ public class Soldier extends Player {
 
         // Idle
         Array<TextureAtlas.AtlasRegion> idleFrames =
-            texture.findRegions("soldier/soldier_idle");
+            texture.findRegions("soldier_idle");
         idle = new Animation<>(0.3f, idleFrames, Animation.PlayMode.LOOP);
 
         // Walk
         Array<TextureAtlas.AtlasRegion> walkFrames =
-            texture.findRegions("soldier/soldier_walk");
+            texture.findRegions("soldier_walk");
         walk = new Animation<>(0.2f, walkFrames, Animation.PlayMode.LOOP);
 
         // Dead (una sola vez)
         Array<TextureAtlas.AtlasRegion> deadFrames =
-            texture.findRegions("soldier/soldier_dead");
+            texture.findRegions("soldier_dead");
         dead = new Animation<>(0.1f, deadFrames, Animation.PlayMode.NORMAL);
 
         currentFrame = idle.getKeyFrame(0);
