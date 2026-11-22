@@ -6,8 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
-import com.korebit.util.EntityState;
-
+import com.korebit.state.EntityState;
 
 public class Soldier extends Player {
 
@@ -15,15 +14,11 @@ public class Soldier extends Player {
     private final Animation<TextureRegion> idle;
     private final Animation<TextureRegion> walk;
     private final Animation<TextureRegion> dead;
-
+    private final Animation<TextureRegion> shotFire;
     private EntityState entityState;
-
     private final Rectangle bounds;
-
-    // Control de muerte
     private float deathTimer = 0;
     private boolean deathAnimationFinished = false;
-
     private TextureRegion currentFrame;
 
     public Soldier() {
@@ -33,18 +28,21 @@ public class Soldier extends Player {
 
         // Idle
         Array<TextureAtlas.AtlasRegion> idleFrames =
-            texture.findRegions("soldier/soldier_idle");
+            texture.findRegions("soldier_idle");
         idle = new Animation<>(0.3f, idleFrames, Animation.PlayMode.LOOP);
 
         // Walk
         Array<TextureAtlas.AtlasRegion> walkFrames =
-            texture.findRegions("soldier/soldier_walk");
+            texture.findRegions("soldier_walk");
         walk = new Animation<>(0.2f, walkFrames, Animation.PlayMode.LOOP);
 
         // Dead (una sola vez)
         Array<TextureAtlas.AtlasRegion> deadFrames =
-            texture.findRegions("soldier/soldier_dead");
+            texture.findRegions("soldier_dead");
         dead = new Animation<>(0.1f, deadFrames, Animation.PlayMode.NORMAL);
+
+        Array<TextureAtlas.AtlasRegion> shotFireFrames = texture.findRegions("soldier_shot");
+        shotFire = new Animation<>(0.2f, shotFireFrames, Animation.PlayMode.LOOP);
 
         currentFrame = idle.getKeyFrame(0);
 
@@ -77,7 +75,7 @@ public class Soldier extends Player {
     @Override
     public void handleMovement(float delta) {
         super.handleMovement(delta);
-        entityState = (getVelocity() != 0) ? EntityState.WALK : EntityState.IDLE;
+        entityState = isAttackState() ? EntityState.SHOT_FIRE : (getVelocity() != 0) ? EntityState.WALK : EntityState.IDLE;
     }
 
     // -----------------------------
@@ -107,6 +105,7 @@ public class Soldier extends Player {
             case IDLE, INVULNERABLE -> currentFrame = idle.getKeyFrame(getStateTime(), true);
             case WALK -> currentFrame = walk.getKeyFrame(getStateTime(), true);
             case DEAD -> currentFrame = dead.getKeyFrame(getStateTime(), false);
+            case SHOT_FIRE -> currentFrame = shotFire.getKeyFrame(getStateTime(), false);
         }
     }
 

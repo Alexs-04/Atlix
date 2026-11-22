@@ -3,6 +3,7 @@ package com.korebit.entity;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.korebit.state.EntityState;
 
 import static com.korebit.util.math.Const.ACCEL;
 import static com.korebit.util.math.Const.FRICTION;
@@ -12,13 +13,21 @@ public abstract class Player extends Actor {
     private boolean facingRight = true;
     private float stateTime = 0;
     private float velocity = 0;
+    private EntityState attackState = null;
 
     public void handleMovement(float delta) {
         // Implement movement logic here
         boolean left = Gdx.input.isKeyPressed(Input.Keys.A);
         boolean right = Gdx.input.isKeyPressed(Input.Keys.D);
+        boolean shotFire = Gdx.input.isKeyPressed(Input.Keys.RIGHT) || Gdx.input.isKeyPressed(Input.Keys.LEFT);
 
         float acceleration;
+
+        if (shotFire) {
+            attackState = EntityState.SHOT_FIRE;
+            velocity = 0;
+            return;
+        }
 
         if (left && !right) {
             acceleration = -ACCEL;
@@ -38,6 +47,8 @@ public abstract class Player extends Actor {
             Math.signum(velocity) != Math.signum(velocity - acceleration * delta)) {
             velocity = 0;
         }
+
+        attackState = null;
 
         moveBy(velocity * delta, 0);
     }
@@ -60,6 +71,10 @@ public abstract class Player extends Actor {
 
     public void setVelocity(float velocity) {
         this.velocity = velocity;
+    }
+
+    public boolean isAttackState(){
+        return attackState == EntityState.SHOT_FIRE;
     }
 
     public boolean isFacingRight() {

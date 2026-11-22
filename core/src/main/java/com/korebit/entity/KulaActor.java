@@ -1,30 +1,20 @@
 package com.korebit.entity;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.korebit.util.SpriteSplitter;
 
 import java.util.List;
 
-import static com.korebit.util.math.Const.*;
-import static com.korebit.util.math.Move.calculeteVelocity;
-
-public class KulaActor extends Actor {
+public class KulaActor extends Player {
 
     private final Texture[] texture;
     private final Animation<TextureRegion> idleAnimation;
     private final Animation<TextureRegion> moveAnimation;
 
     private float stateTime = 0;
-
-    private float velocity = 0;
-
-    private boolean facingRight = true;
     private TextureRegion currentFrame;
 
     public KulaActor() {
@@ -56,35 +46,10 @@ public class KulaActor extends Actor {
 
         stateTime += delta;
 
-        boolean left = Gdx.input.isKeyPressed(Input.Keys.A);
-        boolean right = Gdx.input.isKeyPressed(Input.Keys.D);
-
-        // Movimiento
-        float acceleration;
-        if (left && !right) {
-            acceleration = -ACCEL;
-            facingRight = false;
-        } else if (right && !left) {
-            acceleration = ACCEL;
-            facingRight = true;
-        } else {
-            if (velocity > 0) acceleration = -FRICTION;
-            else if (velocity < 0) acceleration = FRICTION;
-            else acceleration = 0;
-        }
-
-        velocity = calculeteVelocity(velocity, acceleration, delta);
-
-        if (!left && !right &&
-            Math.signum(velocity) != Math.signum(velocity - acceleration * delta)) {
-            velocity = 0;
-        }
-
-        // Actualizar posición
-        moveBy(velocity * delta, 0);
+        super.handleMovement(delta);
 
         // Animación
-        if (velocity != 0) {
+        if (getVelocity() != 0) {
             currentFrame = moveAnimation.getKeyFrame(stateTime, true);
         } else {
             currentFrame = idleAnimation.getKeyFrame(stateTime, true);
@@ -96,7 +61,7 @@ public class KulaActor extends Actor {
         float width = getWidth();
         float height = getHeight();
 
-        if (facingRight) {
+        if (isFacingRight()) {
             batch.draw(currentFrame, getX(), getY(), width, height);
         } else {
             // Flip manual sin modificar la región
