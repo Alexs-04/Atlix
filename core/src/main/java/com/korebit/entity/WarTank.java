@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Array;
-import com.korebit.util.EntityState;
+import com.korebit.state.EntityState;
 
 public class WarTank extends Actor {
     private final TextureAtlas texture;

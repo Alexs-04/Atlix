@@ -1,6 +1,6 @@
-package com.korebit.util;
+package com.korebit.state;
 
-public enum EntityState {
+public enum MoveState {
     IDLE,
     WALK,
     DEAD,
